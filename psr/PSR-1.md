@@ -21,7 +21,7 @@ _Les mots-clés "DOIT", "NE DOIT PAS", "REQUIÈRE", "DEVRA", "NE DEVRA PAS", "DE
 
 ### 2.1 Balises PHP
 
-Le code PHP DOIT utiliser les balises ouvrantes/fermantes soit en version longue `<?php ?>` _soit_ en version courte `<?= ?>` ; le code PHP ne DOIT PAS utiliser d’autres versions.
+Le code PHP DOIT utiliser les balises ouvrantes/fermantes _soit_ en version longue `<?php ?>`, _soit_ en version courte `<?= ?>` ; le code PHP ne DOIT PAS utiliser d’autres versions des balises.
 
 ### 2.2 Encodage des caractères
 
@@ -103,3 +103,34 @@ class Vendor_Model_Foo
 {
 }
 ```
+
+## 4. Constantes, propriétés et méthodes de classes
+
+Le terme « classe » désigne toute classe, interface ou trait.
+
+### 4.1 Constante de classe
+
+Les constantes de classe DOIVENT être déclarées complètement en majuscule, avec le caractère underscore (`_`) en tant que séparateur interne.
+
+Par exemple :
+
+``` php
+<?php
+namespace Vendor\Model;
+
+class Foo
+{
+    const VERSION = '1.0';
+    const DATE_APPROVED = '2012-06-01';
+}
+```
+
+### 4.2 Propriété de classe
+
+Ce guide choisit délibérément de ne pas donner de recommandation quant à l’utilisation des standards `$PascalCase`, `$camelCase` ou `$under_score` pour le nommage des propriétés de classe.
+
+Quelle que soit la convention de nommage choisie, elle DOIT être appliqué de manière cohérente au sein d’une portée donnée au sein du code. Cette portée peut être l’ensemble de l’organisation (_vendor-level_), un projet (_package-level_), une classe ou une méthode spécifique.
+
+### 4.3 Méthode de classe
+
+Le nommage des méthodes de classe DOIT suivre le standard `camelCase()`.
