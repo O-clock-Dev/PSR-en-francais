@@ -127,7 +127,7 @@ class Foo
 
 ### 4.2 Propriété de classe
 
-Ce guide choisit délibérément de ne pas donner de recommandation quant à l’utilisation des standards `$PascalCase`, `$camelCase` ou `$under_score` pour le nommage des propriétés de classe.
+Ce guide choisit délibérément de ne pas donner de recommandation quant à l’utilisation des standards `$PascalCase`, `$camelCase` ou encore `$under_score` pour le nommage des propriétés de classe.
 
 Quelle que soit la convention de nommage choisie, elle DOIT être appliqué de manière cohérente au sein d’une portée donnée au sein du code. Cette portée peut être l’ensemble de l’organisation (_vendor-level_), un projet (_package-level_), une classe ou une méthode spécifique.
 
