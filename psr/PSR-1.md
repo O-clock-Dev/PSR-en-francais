@@ -133,4 +133,4 @@ Quelle que soit la convention de nommage choisie, elle DOIT être appliqué de m
 
 ### 4.3 Méthode de classe
 
-Le nommage des méthodes de classe DOIT suivre le standard `camelCase()`.
+Le nommage des méthodes de classe DOIT suivre le standard [`camelCase()`](https://techlib.fr/definition/camelcase.html).
