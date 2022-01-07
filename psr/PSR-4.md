@@ -7,7 +7,7 @@ _Les mots-clés "DOIT", "NE DOIT PAS", "REQUIÈRE", "DEVRA", "NE DEVRA PAS", "DE
 
 ## 1. En résumé
 
-Cette section du standard PSR décrit une spécification concernant le chargement automatique (_autoloading_) de classes à partir de chemins de fichiers. Cette spécification est totalement interopérable, et peut donc être utilisée en complément de toute autre spécification de chargement automatique, y compris la [PSR-0](./PSR-0.md). La PSR-4 décrit également où placer les fichiers qui seront chargés automatiquement conformément à la spécification.
+Cette section du standard PSR décrit une spécification concernant le chargement automatique (_autoloading_) de classes à partir de chemins de fichiers. Cette spécification est totalement interopérable, et peut donc être utilisée en complément de toute autre spécification de chargement automatique, y compris la PSR-0 [<abbr title="note de traduction">ndt</abbr>: dépréciée depuis]. La PSR-4 décrit également où placer les fichiers qui seront chargés automatiquement conformément à la spécification.
 
 ## 2. Spécification
 
