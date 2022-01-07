@@ -12,7 +12,7 @@ _Les mots-clés "DOIT", "NE DOIT PAS", "REQUIÈRE", "DEVRA", "NE DEVRA PAS", "DE
 - Les fichiers DOIVENT uniquement utiliser les tags `<?php` ou `<?=`.
 - Les fichiers DOIVENT uniquement utiliser un encodage UTF-8, sans BOM, en présence de code PHP.
 - Les fichiers PEUVENT soit déclarer des symboles (classes, fonctions, constantes, etc.), _soit_ déclencher des effets de bord (par exemple, générer du contenu, changer des paramètres .ini, etc.), mais ils NE DEVRAIENT PAS faire les deux à la fois.
-- Les espaces de noms (_namespaces_) et les classes DOIVENT se conformer à un standard PSR de chargement automatique (_autoloading_) : [[PSR-0](./PSR-0.md), [PSR-4](./PSR-4.md)].
+- Les espaces de noms (_namespaces_) et les classes DOIVENT se conformer à un standard PSR de chargement automatique (_autoloading_) : [~~PSR-0~~, [PSR-4](./PSR-4.md)].
 - Les noms de classes DOIVENT être déclarés en `PascalCase`.
 - Les constantes de classe DOIVENT être déclarées en majuscule avec des underscore (`_`) en tant que séparateurs.
 - Les noms des méthodes DOIVENT être déclarées en `camelCase`.
@@ -76,7 +76,7 @@ if (! function_exists('bar')) {
 
 ## 3. Espaces de noms et nommage de classes
 
-Les espaces de noms (_namespaces_) et les classes DOIVENT se conformer à un standard PSR de chargement automatique (_autoloading_) : [[PSR-0](./PSR-0.md), [PSR-4](./PSR-4.md)].
+Les espaces de noms (_namespaces_) et les classes DOIVENT se conformer à un standard PSR de chargement automatique (_autoloading_) : [~~PSR-0~~, [PSR-4](./PSR-4.md)].
 
 Cela signifie que toute classe est placée dans un fichier dédié, et à l’intérieur d’un _namespace_ d’au moins un niveau de profondeur (au niveau du _vendor name_ du projet).
 
