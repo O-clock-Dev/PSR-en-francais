@@ -83,7 +83,7 @@ Il ne DOIT PAS y avoir d’espaces typographiques (_trailing whitespaces_) à l�
 
 Des lignes vides internes PEUVENT être ajoutées dans le but d’améliorer la lisibilité et pour mettre en évidence des blocs thématiques de code, sauf si cette pratique est explicitement proscrite.
 
-Il ne DOIT pas y avoir plus d’une déclaration par ligne.
+Il ne DOIT pas y avoir plus d’une instruction par ligne.
 
 ### 2.4 Indentation
 
@@ -96,3 +96,54 @@ Tous les mots-clés réservés et les types de PHP DOIVENT être écrits en minu
 Tout nouveau type ou mot-clé qui sera ajouté dans les futures versions de PHP DOIVENT l’être en minuscule.
 
 Seules les formes courtes des types DOIVENT être utilisées, par ex. `bool` et non `boolean`, `int` et non `integer`, etc.
+
+## 3. Déclarations, espaces de nommage et imports
+
+L’en-tête d’un fichier PHP peut contenir plusieurs blocs. Lorsque présents, chaque bloc DOIT être séparé par une ligne vide, en ne DOIT PAS contenir de ligne vide. Les blocs DOIVENT être ordonnés comme listé ci-dessous, étant entendu que les blocs inutiles dans un certain contexte peuvent simplement être omis :
+
+- Balise d’ouverture `<?php`
+- Docblock général du fichier
+- Une ou plusieurs instructions de déclaration
+- Déclaration de l’espace de nommage du fichier
+- Une ou plusieurs instructions d’import de classe(s) utilisant `use`
+- Une ou plusieurs instructions d’import de fichier(s) utilisant `use`
+- Une ou plusieurs instructions d’import de constante(s) utilisant `use`
+- Le reste du code PHP
+
+Lorsqu’un fichier contient un mélange de code PHP et HTML, tout ou partie des blocs listés ci-dessus peuvent très bien être utilisés. Dans ce cas, ils DOIVENT être placés en tête du fichier, même dans le cas où le « reste du code » ne consiste qu’en une balise fermante `?>` puis un mélange de HTML et de PHP.
+
+Lorsque la balise ouvrante `<?php` constitue la toute première ligne du fichier, elle DOIT être placée sur une ligne dédiée, sans aucune autre instruction, sauf dans le cas où le fichier ne contiendrait que du balisage HTML placé en-dehors des balises ouvrante et fermante de PHP.
+
+Les instructions d’imports ne DOIVENT JAMAIS commencer avec un antislash, rapport au fait qu’elles doivent toujours correspondre à un nom complet.
+
+L’exemple suivant donne une idée de tous les types de blocs admissibles :
+
+``` php
+<?php
+
+/**
+ * Ce fichier contient des exemples des règles stylistiques pour coder en PHP.
+ */
+
+declare(strict_types=1);
+
+namespace Vendor\Package;
+
+use Vendor\Package\{ClassA as A, ClassB, ClassC as C};
+use Vendor\Package\SomeNamespace\ClassD as D;
+use Vendor\Package\AnotherNamespace\ClassE as E;
+
+use function Vendor\Package\{functionA, functionB, functionC};
+use function Another\Vendor\functionD;
+
+use const Vendor\Package\{CONSTANT_A, CONSTANT_B, CONSTANT_C};
+use const Another\Vendor\CONSTANT_D;
+
+/**
+ * FooBar est un exemple de classe PHP.
+ */
+class FooBar
+{
+    // ... plus de code PHP ...
+}
+```
