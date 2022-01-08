@@ -54,3 +54,45 @@ class Foo extends Bar implements FooInterface
     }
 }
 ```
+
+## 2. Généralités
+
+### 2.1 Standards basiques
+
+Le code DOIT respecter toutes les règles de la [PSR-1](./PSR-1.md).
+
+Le terme « PascalCase » dans la PSR-1 DOIT être compris au sens d’une recommendation syntaxique où la première lettre de chaque mot est en majuscule, y compris la première lettre du premier mot.
+
+### 2.2 Fichiers
+
+Tout fichier PHP DOIT uniquement utiliser la terminaison de ligne de type Unix LF.
+
+Tout fichier PHP DOIT se terminer par une ligne non-vide, elle-même terminée par un unique caractère LF.
+
+La balise fermante `?>` DOIT être omise des fichiers ne contenant que du code PHP.
+
+### 2.3 Lignes
+
+Il ne DOIT PAS y avoir de limite de longueur de ligne imposée par l’éditeur de texte (_hard limite_).
+
+La valeur de toute limite de longueur de ligne suggérée par l’éditeur de texte (_soft limit_) DOIT être de 120 caractères.
+
+Les lignes ne DEVRAIENT PAS dépasser 80 caractères ; les lignes plus longues que cela DEVRAIENT être découpées en plusieurs morceaux répartis sur les lignes suivantes, chacune de ces lignes ne dépassant pas 80 caractères.
+
+Il ne DOIT PAS y avoir d’espaces typographiques (_trailing whitespaces_) à l’extrémité finale des lignes.
+
+Des lignes vides internes PEUVENT être ajoutées dans le but d’améliorer la lisibilité et pour mettre en évidence des blocs thématiques de code, sauf si cette pratique est explicitement proscrite.
+
+Il ne DOIT pas y avoir plus d’une déclaration par ligne.
+
+### 2.4 Indentation
+
+Le code DOIT être indenté en utilisant 4 espaces pour chaque niveau supplémentaire d’indentation, et les tabulations ne DOIVENT PAS être utilisées pour indenter.
+
+### 2.5 Mots-clés et types
+
+Tous les mots-clés réservés et les types de PHP DOIVENT être écrits en minuscule.
+
+Tout nouveau type ou mot-clé qui sera ajouté dans les futures versions de PHP DOIVENT l’être en minuscule.
+
+Seules les formes courtes des types DOIVENT être utilisées, par ex. `bool` et non `boolean`, `int` et non `integer`, etc.
