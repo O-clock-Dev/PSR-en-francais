@@ -729,3 +729,15 @@ for (
     // bloc du for
 }
 ```
+
+### 5.5 `foreach`
+
+Une structure `foreach` ressemble à l’exemple ci-dessous (notez en particulier la position des parenthèses, espaces et accolades) :
+
+``` php
+<?php
+
+foreach ($iterable as $key => $value) {
+    // bloc du foreach
+}
+```
