@@ -600,7 +600,7 @@ if ($expr1) {
 
 Le mot-clé `elseif` DEVRAIT être utilisé en lieu et place de `else if`, de sorte que tous les mots-clés mobilisés au sein d’une structure de contrôle soient composés d’un seul mot naturel/visuel.
 
-Les expressions placées entre les parenthèses PEUVENT être réparties sur plusieurs lignes, à raison d’une expression par nouvelle ligne. Dans ce cas, chaque expression y compris la première DOIVENT être placées sur une ligne dédiée. La parenthèse fermante et l’accolade ouvrante DOIVENT être positionnées ensemble sur une ligne dédiée, avec un unique espace entre ces deux caractères. Les opérateurs booléens placés entre des conditions réparties sur plusieurs lignes DOIVENT toujours être positionnés, _soit_ au début des lignes, _soit_ à la fin des lignes, mais pas un mélange des deux :
+Les expressions placées entre les parenthèses PEUVENT être réparties sur plusieurs lignes, à raison d’une expression par nouvelle ligne indentée. Dans ce cas, chaque expression y compris la première DOIVENT être placées sur une ligne dédiée. La parenthèse fermante et l’accolade ouvrante DOIVENT être positionnées ensemble sur une ligne dédiée, avec un unique espace entre ces deux caractères. Les opérateurs booléens placés entre des conditions réparties sur plusieurs lignes DOIVENT toujours être positionnés, _soit_ au début des lignes, _soit_ à la fin des lignes, mais pas un mélange des deux :
 
 ``` php
 <?php
@@ -643,7 +643,7 @@ switch ($expr) {
 }
 ```
 
-Les expressions placées entre les parenthèses PEUVENT être réparties sur plusieurs lignes, à raison d’une expression par nouvelle ligne. Dans ce cas, chaque condition y compris la première DOIVENT être placées sur une ligne dédiée. La parenthèse fermante et l’accolade ouvrante DOIVENT être positionnées ensemble sur une ligne dédiée, avec un unique espace entre ces deux caractères. Les opérateurs booléens placés entre des conditions réparties sur plusieurs lignes DOIVENT toujours être positionnés, _soit_ au début des lignes, _soit_ à la fin des lignes, mais pas un mélange des deux :
+Les expressions placées entre les parenthèses PEUVENT être réparties sur plusieurs lignes, à raison d’une expression par nouvelle ligne indentée. Dans ce cas, chaque condition y compris la première DOIVENT être placées sur une ligne dédiée. La parenthèse fermante et l’accolade ouvrante DOIVENT être positionnées ensemble sur une ligne dédiée, avec un unique espace entre ces deux caractères. Les opérateurs booléens placés entre des conditions réparties sur plusieurs lignes DOIVENT toujours être positionnés, _soit_ au début des lignes, _soit_ à la fin des lignes, mais pas un mélange des deux :
 
 ``` php
 <?php
@@ -668,7 +668,7 @@ while ($expr) {
 }
 ```
 
-Les expressions placées entre les parenthèses PEUVENT être réparties sur plusieurs lignes, à raison d’une expression par nouvelle ligne. Dans ce cas, chaque condition y compris la première DOIVENT être placées sur une ligne dédiée. La parenthèse fermante et l’accolade ouvrante DOIVENT être positionnées ensemble sur une ligne dédiée, avec un unique espace entre ces deux caractères. Les opérateurs booléens placés entre des conditions réparties sur plusieurs lignes DOIVENT toujours être positionnés, _soit_ au début des lignes, _soit_ à la fin des lignes, mais pas un mélange des deux :
+Les expressions placées entre les parenthèses PEUVENT être réparties sur plusieurs lignes, à raison d’une expression par nouvelle ligne indentée. Dans ce cas, chaque condition y compris la première DOIVENT être placées sur une ligne dédiée. La parenthèse fermante et l’accolade ouvrante DOIVENT être positionnées ensemble sur une ligne dédiée, avec un unique espace entre ces deux caractères. Les opérateurs booléens placés entre des conditions réparties sur plusieurs lignes DOIVENT toujours être positionnés, _soit_ au début des lignes, _soit_ à la fin des lignes, mais pas un mélange des deux :
 
 ``` php
 <?php
@@ -691,7 +691,7 @@ do {
 } while ($expr);
 ```
 
-Les expressions placées entre les parenthèses PEUVENT être réparties sur plusieurs lignes, à raison d’une expression par nouvelle ligne. Dans ce cas, chaque condition y compris la première DOIVENT être placées sur une ligne dédiée. La parenthèse fermante et l’accolade ouvrante DOIVENT être positionnées ensemble sur une ligne dédiée, avec un unique espace entre ces deux caractères. Les opérateurs booléens placés entre des conditions réparties sur plusieurs lignes DOIVENT toujours être positionnés, _soit_ au début des lignes, _soit_ à la fin des lignes, mais pas un mélange des deux :
+Les expressions placées entre les parenthèses PEUVENT être réparties sur plusieurs lignes, à raison d’une expression par nouvelle ligne indentée. Dans ce cas, chaque condition y compris la première DOIVENT être placées sur une ligne dédiée. La parenthèse fermante et l’accolade ouvrante DOIVENT être positionnées ensemble sur une ligne dédiée, avec un unique espace entre ces deux caractères. Les opérateurs booléens placés entre des conditions réparties sur plusieurs lignes DOIVENT toujours être positionnés, _soit_ au début des lignes, _soit_ à la fin des lignes, mais pas un mélange des deux :
 
 ``` php
 <?php
@@ -702,4 +702,30 @@ do {
     $expr1
     && $expr2
 );
+```
+
+### 5.4 `for`
+
+Une structure `for` ressemble à l’exemple ci-dessous (notez en particulier la position des parenthèses, espaces et accolades) :
+
+``` php
+<?php
+
+for ($i = 0; $i < 10; $i++) {
+    // bloc du for
+}
+```
+
+Les expressions placées entre les parenthèses PEUVENT être réparties sur plusieurs lignes, à raison d’une expression par nouvelle ligne indentée. Dans ce cas, chaque condition y compris la première DOIVENT être placées sur une ligne dédiée. La parenthèse fermante et l’accolade ouvrante DOIVENT être positionnées ensemble sur une ligne dédiée, avec un unique espace entre ces deux caractères. Les opérateurs booléens placés entre des conditions réparties sur plusieurs lignes DOIVENT toujours être positionnés, _soit_ au début des lignes, _soit_ à la fin des lignes, mais pas un mélange des deux :
+
+``` php
+<?php
+
+for (
+    $i = 0;
+    $i < 10;
+    $i++
+) {
+    // bloc du for
+}
 ```
