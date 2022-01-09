@@ -759,3 +759,26 @@ try {
     // bloc du finally
 }
 ```
+
+## 6. Opérateurs
+
+Les règles stylistiques concernant les opérateurs sont regroupées par arité (ie. le nombre d’opérandes concernées par l’opérateur).
+
+Lorsqu’un ou des espaces sont autorisés autour d’un opérateur, il PEUT y avoir plusieurs espaces au lieu d’un seul, dans le but d’améliorer la lisibilité.
+
+Tout opérateur non-décrit dans cette section est indéfini d’un point de vue stylistique.
+
+### 6.1 Opérateurs unaires
+
+Les opérateurs d’incrémentation et décrémentation ne DOIVENT PAS recevoir d’espace entre l’opérateur et l’opérande :
+
+``` php
+$i++;
+++$j;
+```
+
+Les opérateurs de cœrcition (_type casting_) ne DOIVENT PAS recevoir d’espace à l’intérieur de leurs parenthèses :
+
+``` php
+$intValue = (int) $input;
+```
