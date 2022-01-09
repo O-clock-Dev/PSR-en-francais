@@ -652,6 +652,54 @@ switch (
     $expr1
     && $expr2
 ) {
-    // corps de la structure de contrôle
+    // corps de la structure
 }
+```
+
+### 5.3 `while`, `do while`
+
+Une structure `while` ressemble à l’exemple ci-dessous (notez en particulier la position des parenthèses, espaces et accolades) :
+
+``` php
+<?php
+
+while ($expr) {
+    // corps de la structure
+}
+```
+
+Les expressions placées entre les parenthèses PEUVENT être réparties sur plusieurs lignes, à raison d’une expression par nouvelle ligne. Dans ce cas, chaque condition y compris la première DOIVENT être placées sur une ligne dédiée. La parenthèse fermante et l’accolade ouvrante DOIVENT être positionnées ensemble sur une ligne dédiée, avec un unique espace entre ces deux caractères. Les opérateurs booléens placés entre des conditions réparties sur plusieurs lignes DOIVENT toujours être positionnés, _soit_ au début des lignes, _soit_ à la fin des lignes, mais pas un mélange des deux :
+
+``` php
+<?php
+
+while (
+    $expr1
+    && $expr2
+) {
+    // corps de la structure
+}
+```
+
+De manière similaire, une structure `do while` ressemble à l’exemple ci-dessous (notez en particulier la position des parenthèses, espaces et accolades) :
+
+``` php
+<?php
+
+do {
+    // structure body;
+} while ($expr);
+```
+
+Les expressions placées entre les parenthèses PEUVENT être réparties sur plusieurs lignes, à raison d’une expression par nouvelle ligne. Dans ce cas, chaque condition y compris la première DOIVENT être placées sur une ligne dédiée. La parenthèse fermante et l’accolade ouvrante DOIVENT être positionnées ensemble sur une ligne dédiée, avec un unique espace entre ces deux caractères. Les opérateurs booléens placés entre des conditions réparties sur plusieurs lignes DOIVENT toujours être positionnés, _soit_ au début des lignes, _soit_ à la fin des lignes, mais pas un mélange des deux :
+
+``` php
+<?php
+
+do {
+    // structure body;
+} while (
+    $expr1
+    && $expr2
+);
 ```
