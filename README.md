@@ -1,4 +1,4 @@
-# Traduction française non-officielle des PSR
+# Traduction française non-officielle des PSR de PHP
 
 Source : https://www.php-fig.org/psr/
 
