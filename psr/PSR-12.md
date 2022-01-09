@@ -581,3 +581,39 @@ Les règles stylistiques générales concernant les structures de contrôles son
 - l’accolade fermante DOIT être placée sur la nouvelle ligne immédiatement en-dessous du code de la structure de contrôle
 
 Le corps de toute structure de contrôle DOIT être délimité par des accolades. Cela contribue à standardiser visuellement la façon dont sont codées ces structures, et participe de minimiser les chances d’introduire des erreurs lors du rajout de nouvelles lignes dans la structure.
+
+### 5.1 `if`, `elseif`, `else`
+
+Une structure `if` ressemble à l’exemple ci-dessous (notez en particulier la position des parenthèses, espaces et accolades, ainsi que le fait que les mots-clés `elseif` et `else` sont positionnés sur la même ligne que l’accolade fermante du bloc-logique précédent) :
+
+``` php
+<?php
+
+if ($expr1) {
+    // bloc du if
+} elseif ($expr2) {
+    // bloc du elseif
+} else {
+    // bloc du else;
+}
+```
+
+Le mot-clé `elseif` DEVRAIT être utilisé en lieu et place de `else if`, de sorte que tous les mots-clés mobilisés au sein d’une structure de contrôle soient composés d’un seul mot naturel/visuel.
+
+Les expressions placées entre les parenthèses PEUVENT être réparties sur plusieurs lignes, à raison d’une expression par nouvelle ligne. Dans ce cas, chaque expression y compris la première DOIVENT être placées sur une ligne dédiée. La parenthèse fermante et l’accolade ouvrante DOIVENT être positionnées ensemble sur une ligne dédiée, avec un unique espace entre ces deux caractères. Les opérateurs booléens placés entre des conditions réparties sur plusieurs lignes DOIVENT toujours être positionnés, _soit_ au début des lignes, _soit_ à la fin des lignes, mais pas un mélange des deux :
+
+``` php
+<?php
+
+if (
+    $expr1
+    && $expr2
+) {
+    // bloc du if
+} elseif (
+    $expr3
+    && $expr4
+) {
+    // bloc du elseif
+}
+```
