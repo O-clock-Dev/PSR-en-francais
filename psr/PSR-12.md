@@ -406,7 +406,7 @@ function fooBarBaz($arg1, &$arg2, $arg3 = [])
 
 ### 4.5 Paramètres des méthodes et fonctions
 
-La liste des paramètres ne DOIT PAS contenir d’espace _avant_ les virgules séparatrices, mais DOIT contenir un espace _après_ chacune des ces virgules.
+La liste des paramètres ne DOIT PAS contenir d’espace _avant_ les virgules séparatrices, mais DOIT contenir un unique espace _après_ chacune des ces virgules.
 
 Les paramètres de méthodes et de fonctions recevant une valeur par défaut DOIVENT être positionnés en fin de liste :
 
@@ -426,7 +426,7 @@ class ClassName
 
 Une liste de paramètres PEUT être répartie sur plusieurs lignes, chacune étant indentée d’un seul niveau. Dans ce cas, le premier item de la liste doit lui aussi être positionné sur sa propre ligne, et la liste décomposée à raison d’un argument par ligne.
 
-Lorsqu’une liste de paramètres est ainsi réparties sur plusieurs lignes, la parenthèse fermante et l’accolade ouvrante DOIVENT être positionnées ensemble sur leur propre ligne, avec un espace entre les deux caractères :
+Lorsqu’une liste de paramètres est ainsi réparties sur plusieurs lignes, la parenthèse fermante et l’accolade ouvrante DOIVENT être positionnées ensemble sur leur propre ligne, avec un unique espace entre les deux caractères :
 
 ``` php
 <?php
@@ -445,7 +445,7 @@ class ClassName
 }
 ```
 
-Si le type de la valeur de retour est déclaré, il DOIT y avoir un espace après le caractère deux-point (`:`) et avant la déclaration du type. Le caractère `:` et la déclaration de type DOIVENT être positionnés sur la même ligne que la parenthèse fermante de la liste des paramètres, et ceci toujours sans mettre d’espace entre la parenthèse et `:` :
+Si le type de la valeur de retour est déclaré, il DOIT y avoir un unique espace après le caractère deux-point (`:`) et avant la déclaration du type. Le caractère `:` et la déclaration de type DOIVENT être positionnés sur la même ligne que la parenthèse fermante de la liste des paramètres, et ceci toujours sans mettre d’espace entre la parenthèse et `:` :
 
 ``` php
 <?php
@@ -535,7 +535,7 @@ abstract class ClassName
 
 ### 4.7 Appels de méthodes et fonctions
 
-Lors d’un appel à une méthode ou à une fonction, il ne DOIT PAS y avoir d’espace entre le nom de la méthode ou fonction, et la parenthèse ouvrante ; il ne DOIT PAS y avoir d’espace après la parenthèse ouvrante ; il ne DOIT PAS y avoir d’espace avant la parenthèse fermante. Au niveau de la liste des arguments, il ne DOIT PAS y avoir d’espace avant les virgules séparatrices, et il DOIT y avoir un espace après chacune de ces virgules :
+Lors d’un appel à une méthode ou à une fonction, il ne DOIT PAS y avoir d’espace entre le nom de la méthode ou fonction, et la parenthèse ouvrante ; il ne DOIT PAS y avoir d’espace après la parenthèse ouvrante ; il ne DOIT PAS y avoir d’espace avant la parenthèse fermante. Au niveau de la liste des arguments, il ne DOIT PAS y avoir d’espace avant les virgules séparatrices, et il DOIT y avoir un unique espace après chacune de ces virgules :
 
 ``` php
 <?php
@@ -567,3 +567,17 @@ $app->get('/hello/{name}', function ($name) use ($app) {
     return 'Hello ' . $app->escape($name);
 });
 ```
+
+## 5. Structures de contrôle
+
+Les règles stylistiques générales concernant les structures de contrôles sont les suivantes :
+
+- il DOIT y avoir un unique espace après le mot-clé de la structure de contrôle
+- il ne DOIT PAS y avoir d’espace après la parenthèse ouvrante
+- il ne DOIT PAS y avoir d’espace avant la parenthèse fermante
+- il DOIT y avoir un unique espace entre la parenthèse fermante et l’accolade ouvrante
+- le code de la structure de contrôle DOIT être indenté, d’un seul niveau
+- le code de la structure de contrôle DOIT débuter sur la nouvelle ligne immédiatement en-dessous de l’accolade ouvrante
+- l’accolade fermante DOIT être placée sur la nouvelle ligne immédiatement en-dessous du code de la structure de contrôle
+
+Le corps de toute structure de contrôle DOIT être délimité par des accolades. Cela contribue à standardiser visuellement la façon dont sont codées ces structures, et participe de minimiser les chances d’introduire des erreurs lors du rajout de nouvelles lignes dans la structure.
