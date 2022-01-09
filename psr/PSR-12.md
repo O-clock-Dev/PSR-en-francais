@@ -368,3 +368,38 @@ class ClassName
     public static int $bar = 0;
 }
 ```
+
+### 4.4 Méthodes et fonctions
+
+Toute méthode DOIT être associée à une visibilité.
+
+Les nommage des méthodes ne DOIT PAS donner de sens particulier au caractère underscore (`_`) concernant la visibilité protégée ou privée. Autrement dit, un préfixe `_` n’a aucun sens particulier.
+
+Les noms de méthodes et de fonctions ne DOIVENT PAS être suivis d’un espace. L’accolade ouvrante DOIT être placée sur sa propre ligne, et l’accolade fermante DOIT être placée sur la ligne suivant immédiatement la fin du corps de la méthode ou fonction. Il ne DOIT PAS y avoir d’espace après la parenthèse ouvrante et avant la parenthèse fermante.
+
+Une déclaration de méthode ressemble au code suivant (notez en particulier la position des parenthèses, virgules, espaces et accolades) :
+
+``` php
+<?php
+
+namespace Vendor\Package;
+
+class ClassName
+{
+    public function fooBarBaz($arg1, &$arg2, $arg3 = [])
+    {
+        // corps de la méthode
+    }
+}
+```
+
+Une déclaration de fonction ressemble au code suivant (notez en particulier la position des parenthèses, virgules, espaces et accolades) :
+
+``` php
+<?php
+
+function fooBarBaz($arg1, &$arg2, $arg3 = [])
+{
+    // corps de la fonction
+}
+```
