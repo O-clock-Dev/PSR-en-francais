@@ -340,3 +340,31 @@ class Talker
     }
 }
 ```
+
+### 4.3 Propriétés et constantes
+
+Toute propriété DOIT être associée à une visibilité.
+
+Pour tout projet codé avec une version de PHP supportant la visibilité des constantes (version 7.1 et plus récente), toute constante DOIT être associée à une visibilité.
+
+Le mot-clé `var` ne DOIT PAS être utilisé pour déclarer une propriété.
+
+Il ne DOIT PAS y avoir plus d’une déclaration de propriété par instruction.
+
+Les nommage des propriétés ne DOIT PAS donner de sens particulier au caractère underscore (`_`) concernant la visibilité protégée ou privée. Autrement dit, un préfixe `_` n’a aucun sens particulier.
+
+Il DOIT y avoir un espace entre la déclaration de type et le nom de la propriété.
+
+Une déclaration de propriété peut dès lors ressemble à ceci :
+
+``` php
+<?php
+
+namespace Vendor\Package;
+
+class ClassName
+{
+    public $foo = null;
+    public static int $bar = 0;
+}
+```
