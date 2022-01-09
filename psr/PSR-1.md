@@ -21,7 +21,7 @@ _Les mots-clés "DOIT", "NE DOIT PAS", "REQUIÈRE", "DEVRA", "NE DEVRA PAS", "DE
 
 ### 2.1 Balises PHP
 
-Le code PHP DOIT utiliser les balises ouvrantes/fermantes _soit_ en version longue `<?php ?>`, _soit_ en version courte `<?= ?>` ; le code PHP ne DOIT PAS utiliser d’autres versions des balises.
+Le code PHP DOIT utiliser les balises ouvrantes/fermantes _soit_ en version longue `<?php ?>`, _soit_ en version courte `<?= ?>` ; le code PHP NE DOIT PAS utiliser d’autres versions des balises.
 
 ### 2.2 Encodage des caractères
 
@@ -29,7 +29,7 @@ Le code PHP DOIT uniquement utiliser l’encodage UTF-8, sans BOM.
 
 ### 2.3 Effets de bord
 
-Un fichier contenant du code PHP DEVRAIT _soit_ déclarer de nouveaux symboles (classes, fonctions, constantes, etc.) et ne pas causer d’effets de bord, _soit_ exécuter de la logique à effets de bord, mais ne DEVRAIT PAS faire les deux à la fois.
+Un fichier contenant du code PHP DEVRAIT _soit_ déclarer de nouveaux symboles (classes, fonctions, constantes, etc.) et ne pas causer d’effets de bord, _soit_ exécuter de la logique à effets de bord, mais NE DEVRAIT PAS faire les deux à la fois.
 
 L’expression « effet de bord » fait référence à l’exécution de toute logique non directement liée à la déclaration de nouvelles classes, fonctions, constantes, etc. et à l’exception de la simple inclusion du fichier dans un autre.
 
