@@ -782,3 +782,29 @@ Les opérateurs de cœrcition (_type casting_) ne DOIVENT PAS recevoir d’espac
 ``` php
 $intValue = (int) $input;
 ```
+
+### 6.2 Opérateurs binaires
+
+Tous les opérateurs binaires ([arithmétiques](https://www.php.net/manual/fr/language.operators.arithmetic.php), de [comparaison](https://www.php.net/manual/fr/language.operators.comparison.php), d’[affectation](https://www.php.net/manual/fr/language.operators.assignment.php), sur [les bits](https://www.php.net/manual/fr/language.operators.bitwise.php), de [logique booléenne](https://www.php.net/manual/fr/language.operators.logical.php), pour les [chaînes de caractères](https://www.php.net/manual/fr/language.operators.string.php) et pour les [types](https://www.php.net/manual/fr/language.operators.type.php)) DOIVENT être précédés et suivis d’au moins un espace :
+
+``` php
+if ($a === $b) {
+    $foo = $bar ?? $a ?? $b;
+} elseif ($a > $b) {
+    $foo = $a + $b * $c;
+}
+```
+
+### 6.3 Opérateurs ternaires
+
+L’opérateur conditionnel, aussi connu simplement sous le nom d’opérateur ternaire, DOIT être précédé et suivi d’au moins un espace, aussi bien autour du caractère `?` que du `:` :
+
+``` php
+$variable = $foo ? 'foo' : 'bar';
+```
+
+Lorsque l’opérande du milieu de l’opérateur conditionnel est omise, alors l’opérateur DOIT suivre les mêmes règles syntaxiques et stylistiques que les [opérateurs binaires de comparaison](https://www.php.net/manual/fr/language.operators.comparison.php) :
+
+``` php
+$variable = $foo ?: 'bar';
+```
