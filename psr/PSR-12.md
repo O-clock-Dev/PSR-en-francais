@@ -908,3 +908,33 @@ $foo->bar(
     $arg3
 );
 ```
+
+## 8. Classe anonyme
+
+Toute classe anonyme DOIT suivre les mêmes règles syntaxiques et les mêmes principes que ceux en application pour les fermetures, tels que décrits dans la section précédente.
+
+``` php
+<?php
+
+$instance = new class {};
+```
+
+L’accolade ouvrante PEUT être placée sur la même ligne que le mot-clé `class` tant que, en présence d’une liste de déclarations `implements`, cette liste ne dépasse pas la limite horizontale de caractères (`soft-wrap`). Si cette limite vient à être dépassée, alors l’accolade ouvrante DOIT être placée sur une ligne dédiée, immédiatement après la fin de la liste d’interfaces réparties sur plusieurs lignes :
+
+``` php
+<?php
+
+// Accolade sur la même ligne que la (courte) liste d’interface
+$instance = new class extends \Foo implements \HandleableInterface {
+    // code de la classe
+};
+
+// Accolade sur la ligne suivant la (longue) liste d’interfaces
+$instance = new class extends \Foo implements
+    \ArrayAccess,
+    \Countable,
+    \Serializable
+{
+    // code de la classe
+};
+```
