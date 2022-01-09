@@ -741,3 +741,21 @@ foreach ($iterable as $key => $value) {
     // bloc du foreach
 }
 ```
+
+### 5.6 `try`, `catch`, `finally`
+
+Une structure `try`-`catch`-`finally` ressemble à l’exemple ci-dessous (notez en particulier la position des parenthèses, espaces et accolades) :
+
+``` php
+<?php
+
+try {
+    // bloc du try
+} catch (FirstThrowableType $e) {
+    // bloc du catch
+} catch (OtherThrowableType | AnotherThrowableType $e) {
+    // bloc d’un autre catch
+} finally {
+    // bloc du finally
+}
+```
