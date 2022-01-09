@@ -508,3 +508,27 @@ public function process(string $algorithm, &...$parts)
     // processing
 }
 ```
+
+### 4.6 `abstract`, `final` et `static`
+
+Si présentes, les déclarations `abstract` et `final` DOIVENT précéder la déclaration de visibilité.
+
+Si présentes, la déclaration `static` DOIT être précédée de la déclaration de visibilité.
+
+``` php
+<?php
+
+namespace Vendor\Package;
+
+abstract class ClassName
+{
+    protected static $foo;
+
+    abstract protected function zim();
+
+    final public static function bar()
+    {
+        // corps de la méthode
+    }
+}
+```
