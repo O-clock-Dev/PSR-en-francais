@@ -77,7 +77,7 @@ Il NE DOIT PAS y avoir de limite de longueur de ligne imposée par l’éditeur 
 
 La valeur de toute limite de longueur de ligne suggérée par l’éditeur de texte (_soft limit_) DOIT être de 120 caractères.
 
-Les lignes ne DEVRAIENT PAS dépasser 80 caractères ; les lignes plus longues que cela DEVRAIENT être découpées en plusieurs morceaux répartis sur les lignes suivantes, chacune de ces lignes ne dépassant pas 80 caractères.
+Les lignes NE DEVRAIENT PAS dépasser 80 caractères ; les lignes plus longues que cela DEVRAIENT être découpées en plusieurs morceaux répartis sur les lignes suivantes, chacune de ces lignes ne dépassant pas 80 caractères.
 
 Il NE DOIT PAS y avoir d’espaces typographiques (_trailing whitespaces_) à l’extrémité finale des lignes.
 
@@ -114,7 +114,7 @@ Lorsqu’un fichier contient un mélange de code PHP et HTML, tout ou partie des
 
 Lorsque la balise ouvrante `<?php` constitue la toute première ligne du fichier, elle DOIT être placée sur une ligne dédiée, sans aucune autre instruction, sauf dans le cas où le fichier ne contiendrait que du balisage HTML placé en-dehors des balises ouvrante et fermante de PHP.
 
-Les instructions d’imports ne DOIVENT JAMAIS commencer avec un antislash, rapport au fait qu’elles doivent toujours correspondre à un nom complet.
+Les instructions d’imports NE DOIVENT JAMAIS commencer avec un antislash, rapport au fait qu’elles doivent toujours correspondre à un nom complet.
 
 L’exemple suivant donne une idée de tous les types de blocs admissibles :
 
@@ -375,7 +375,7 @@ Toute méthode DOIT être associée à une visibilité.
 
 Les nommage des méthodes NE DOIT PAS donner de sens particulier au caractère underscore (`_`) concernant la visibilité protégée ou privée. Autrement dit, un préfixe `_` n’a aucun sens particulier.
 
-Les noms de méthodes et de fonctions ne DOIVENT PAS être suivis d’un espace. L’accolade ouvrante DOIT être placée sur sa propre ligne, et l’accolade fermante DOIT être placée sur la ligne suivant immédiatement la fin du corps de la méthode ou fonction. Il NE DOIT PAS y avoir d’espace après la parenthèse ouvrante et avant la parenthèse fermante.
+Les noms de méthodes et de fonctions NE DOIVENT PAS être suivis d’un espace. L’accolade ouvrante DOIT être placée sur sa propre ligne, et l’accolade fermante DOIT être placée sur la ligne suivant immédiatement la fin du corps de la méthode ou fonction. Il NE DOIT PAS y avoir d’espace après la parenthèse ouvrante et avant la parenthèse fermante.
 
 Une déclaration de méthode ressemble au code suivant (notez en particulier la position des parenthèses, virgules, espaces et accolades) :
 
@@ -471,7 +471,7 @@ class ReturnTypeVariations
 }
 ```
 
-Les déclarations de types _nullable_ ne DOIVENT PAS contenir d’espace entre le point d’interrogation (`?`) et le type :
+Les déclarations de types _nullable_ NE DOIVENT PAS contenir d’espace entre le point d’interrogation (`?`) et le type :
 
 ``` php
 <?php
@@ -770,14 +770,14 @@ Tout opérateur non-décrit dans cette section est indéfini d’un point de vue
 
 ### 6.1 Opérateurs unaires
 
-Les opérateurs d’incrémentation et décrémentation ne DOIVENT PAS recevoir d’espace entre l’opérateur et l’opérande :
+Les opérateurs d’incrémentation et décrémentation NE DOIVENT PAS recevoir d’espace entre l’opérateur et l’opérande :
 
 ``` php
 $i++;
 ++$j;
 ```
 
-Les opérateurs de cœrcition (_type casting_) ne DOIVENT PAS recevoir d’espace à l’intérieur de leurs parenthèses :
+Les opérateurs de cœrcition (_type casting_) NE DOIVENT PAS recevoir d’espace à l’intérieur de leurs parenthèses :
 
 ``` php
 $intValue = (int) $input;
