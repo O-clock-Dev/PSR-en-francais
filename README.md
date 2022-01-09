@@ -10,7 +10,7 @@ Source : https://www.php-fig.org/psr/
 - PSR-6
 - PSR-7
 - PSR-11
-- [PSR-12](./psr/PSR-12.md) _Guide de style_
+- [PSR-12](./psr/PSR-12.md) _Guide stylistique_
 - PSR-13
 - PSR-14
 - PSR-15
