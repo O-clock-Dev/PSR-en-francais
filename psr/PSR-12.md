@@ -404,11 +404,11 @@ function fooBarBaz($arg1, &$arg2, $arg3 = [])
 }
 ```
 
-### 4.5 Arguments des méthodes et fonctions
+### 4.5 Paramètres des méthodes et fonctions
 
-La liste des arguments ne DOIT PAS contenir d’espace _avant_ les virgules séparatrices, mais DOIT contenir un espace _après_ chacune des ces virgules.
+La liste des paramètres ne DOIT PAS contenir d’espace _avant_ les virgules séparatrices, mais DOIT contenir un espace _après_ chacune des ces virgules.
 
-Les arguments de méthodes et de fonctions recevant une valeur par défaut DOIVENT être positionnés en fin de liste :
+Les paramètres de méthodes et de fonctions recevant une valeur par défaut DOIVENT être positionnés en fin de liste :
 
 ``` php
 <?php
@@ -424,9 +424,9 @@ class ClassName
 }
 ```
 
-Une liste d’arguments PEUT être répartie sur plusieurs lignes, chacune étant indentée d’un seul niveau. Dans ce cas, le premier item de la liste doit lui aussi être positionné sur sa propre ligne, et la liste décomposée à raison d’un argument par ligne.
+Une liste de paramètres PEUT être répartie sur plusieurs lignes, chacune étant indentée d’un seul niveau. Dans ce cas, le premier item de la liste doit lui aussi être positionné sur sa propre ligne, et la liste décomposée à raison d’un argument par ligne.
 
-Lorsqu’une liste d’arguments est ainsi réparties sur plusieurs lignes, la parenthèse fermante et l’accolade ouvrante DOIVENT être positionnées ensemble sur leur propre ligne, avec un espace entre les deux caractères :
+Lorsqu’une liste de paramètres est ainsi réparties sur plusieurs lignes, la parenthèse fermante et l’accolade ouvrante DOIVENT être positionnées ensemble sur leur propre ligne, avec un espace entre les deux caractères :
 
 ``` php
 <?php
@@ -445,7 +445,7 @@ class ClassName
 }
 ```
 
-Si le type de la valeur de retour est déclaré, il DOIT y avoir un espace après le caractère deux-point (`:`) et avant la déclaration du type. Le caractère `:` et la déclaration de type DOIVENT être positionnés sur la même ligne que la parenthèse fermante de la liste des arguments, et ceci toujours sans mettre d’espace entre la parenthèse et `:` :
+Si le type de la valeur de retour est déclaré, il DOIT y avoir un espace après le caractère deux-point (`:`) et avant la déclaration du type. Le caractère `:` et la déclaration de type DOIVENT être positionnés sur la même ligne que la parenthèse fermante de la liste des paramètres, et ceci toujours sans mettre d’espace entre la parenthèse et `:` :
 
 ``` php
 <?php
@@ -489,9 +489,9 @@ class ReturnTypeVariations
 }
 ```
 
-Lorsque l’opérateur de référence `&` est utilisé avant un argument, il ne DOIT PAS y avoir d’espace après l’opérateur (ce qui est illustré par l’exemple ci-dessus).
+Lorsque l’opérateur de référence `&` est utilisé avant un paramètre, il ne DOIT PAS y avoir d’espace après l’opérateur (ce qui est illustré par l’exemple ci-dessus).
 
-Il ne DOIT PAS y avoir d’espace entre les trois petits points signalant un comportement variadique, et le nom de l’argument-collecteur :
+Il ne DOIT PAS y avoir d’espace entre les trois petits points signalant un comportement variadique, et le nom du paramètre-collecteur :
 
 ``` php
 public function process(string $algorithm, ...$parts)
@@ -531,4 +531,39 @@ abstract class ClassName
         // corps de la méthode
     }
 }
+```
+
+### 4.7 Appels de méthodes et fonctions
+
+Lors d’un appel à une méthode ou à une fonction, il ne DOIT PAS y avoir d’espace entre le nom de la méthode ou fonction, et la parenthèse ouvrante ; il ne DOIT PAS y avoir d’espace après la parenthèse ouvrante ; il ne DOIT PAS y avoir d’espace avant la parenthèse fermante. Au niveau de la liste des arguments, il ne DOIT PAS y avoir d’espace avant les virgules séparatrices, et il DOIT y avoir un espace après chacune de ces virgules :
+
+``` php
+<?php
+
+bar();
+$foo->bar($arg1);
+Foo::bar($arg2, $arg3);
+```
+
+La liste des arguments d’appel PEUT être répartie sur plusieurs lignes, chacune étant indentée d’un seul niveau. Dans ce cas, le premier item de la liste doit lui aussi être positionné sur sa propre ligne, et la liste décomposée à raison d’un argument par ligne. Il arrive qu’un unique argument soit syntaxiquement réparti sur plusieurs lignes (comme c’est parfois le cas des fonctions ou tableaux anonymes pour un callback), mais cela n’est pas équivalent au fait de répartir une _liste_ d’arguments sur plusieurs lignes :
+
+``` php
+<?php
+
+$foo->bar(
+    $longArgument,
+    $longerArgument,
+    $muchLongerArgument
+);
+<?php
+```
+
+``` php
+somefunction($foo, $bar, [
+  // ...
+], $baz);
+
+$app->get('/hello/{name}', function ($name) use ($app) {
+    return 'Hello ' . $app->escape($name);
+});
 ```
