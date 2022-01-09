@@ -808,3 +808,103 @@ Lorsque l’opérande du milieu de l’opérateur conditionnel est omise, alors 
 ``` php
 $variable = $foo ?: 'bar';
 ```
+
+## 7. Fermetures (_closures_)
+
+Les fermetures DOIVENT être déclarées avec un espace après le mot-clé `function`, et un espace avant et après le mot-clé `use` si utilisé.
+
+L’accolade ouvrante DOIT être placée sur la même ligne que la déclaration, et l’accolade fermante DOIT être placée sur une ligne dédiée, juste après la fin du corps de la fermeture.
+
+Il ne DOIT PAS y avoir d’espace après la parenthèse ouvrante ou avant la parenthèse fermante des listes de paramètres et de variables associées à la fermeture.
+
+Dans ces listes de paramètres et de variables associée à la fermeture, il ne DOIT PAS y avoir d’espace avant les virgules séparatrices, mais il DOIT y avoir un unique espace après chacune de ces virgules.
+
+Les paramètres d’une fermeture recevant des valeurs par défaut doivent être positionnés en fin de liste.
+
+Si le type de la valeur de retour est indiqué, il DOIT suivre les mêmes rềgles que celles s’appliquant au typage du retour de méthodes et fonctions ; si le mot-clé `use` est utilisé, le caractère `:` DOIT être placé immédiatement à la suite de la parenthèse fermante de la liste du `use`, sans espace intermédiaire.
+
+Une déclaration de fermeture ressemble à l’exemple ci-dessous (notez en particulier la position des parenthèses, espaces et accolades) :
+
+``` php
+<?php
+
+$closureWithArgs = function ($arg1, $arg2) {
+    // corps de la fermeture
+};
+
+$closureWithArgsAndVars = function ($arg1, $arg2) use ($var1, $var2) {
+    // corps de la fermeture
+};
+
+$closureWithArgsVarsAndReturn = function ($arg1, $arg2) use ($var1, $var2): bool {
+    // corps de la fermeture
+};
+```
+
+Les listes de paramètres et de variables PEUVENT être réparties sur plusieurs lignes, étant entendu que chacune sera indentée d’un seul niveau relativement à la déclaration de la fermeture. Dans ce cas, chaque item de la liste, y compris le premier, DOIT être placé sur une ligne dédiée.
+
+Quand une telle liste (de paramètres ou de variables) est ainsi répartie sur plusieurs lignes, la parenthèse fermante et l’accolade ouvrante DOIVENT être placées sur une ligne dédiée, avec un unique espace entre les deux caractères.
+
+L’exemple ci-dessous regroupe plusieurs déclarations valides de fermetures, avec ou sans listes de paramètres et de variables réparties sur plusieurs lignes :
+
+``` php
+<?php
+
+$longArgs_noVars = function (
+    $longArgument,
+    $longerArgument,
+    $muchLongerArgument
+) {
+   // corps de la fermeture
+};
+
+$noArgs_longVars = function () use (
+    $longVar1,
+    $longerVar2,
+    $muchLongerVar3
+) {
+   // corps de la fermeture
+};
+
+$longArgs_longVars = function (
+    $longArgument,
+    $longerArgument,
+    $muchLongerArgument
+) use (
+    $longVar1,
+    $longerVar2,
+    $muchLongerVar3
+) {
+   // corps de la fermeture
+};
+
+$longArgs_shortVars = function (
+    $longArgument,
+    $longerArgument,
+    $muchLongerArgument
+) use ($var1) {
+   // corps de la fermeture
+};
+
+$shortArgs_longVars = function ($arg) use (
+    $longVar1,
+    $longerVar2,
+    $muchLongerVar3
+) {
+   // corps de la fermeture
+};
+```
+
+Notez que les règles de formattage s’appliquent aussi dans le cas où une fermeture est utilisée directement au sein de l’instruction d’appel à une fonction ou à une méthode :
+
+``` php
+<?php
+
+$foo->bar(
+    $arg1,
+    function ($arg2) use ($var1) {
+        // corps de la fermeture
+    },
+    $arg3
+);
+```
