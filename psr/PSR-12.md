@@ -235,7 +235,7 @@ class ClassName extends ParentClass implements \ArrayAccess, \Countable
 }
 ```
 
-Lorsqu’une classe mobilise une liste d’interfaces avec `extends` (ou lorsqu’une interface mobilise une liste d’autres interfaces avec `extends` [ndt: cf. [exemple #3](https://www.php.net/manual/fr/language.oop5.interfaces.php)]), ces listes PEUVENT être réparties sur plusieurs lignes, à raison d’une interface maximum par nouvelle ligne, y compris le premier item de la liste, chaque ligne étant indentée d’un seul niveau.
+Lorsqu’une classe mobilise une liste d’interfaces avec `implements` (ou lorsqu’une interface mobilise une liste d’autres interfaces avec `extends` [ndt: cf. [exemple #3](https://www.php.net/manual/fr/language.oop5.interfaces.php)]), ces listes PEUVENT être réparties sur plusieurs lignes, à raison d’une interface maximum par nouvelle ligne, y compris le premier item de la liste, chaque ligne étant indentée d’un seul niveau.
 
 ``` php
 <?php
@@ -252,5 +252,91 @@ class ClassName extends ParentClass implements
     \Serializable
 {
     // constantes, propriétés et méthodes
+}
+```
+
+### 4.2 Utilisation de traits
+
+Le mot-clé `use` permettant de mobiliser un trait à l’intérieur d’une classe DOIT être placé sur la ligne qui suit immédiatement l’accolade ouvrante :
+
+``` php
+<?php
+
+namespace Vendor\Package;
+
+use Vendor\Package\FirstTrait;
+
+class ClassName
+{
+    use FirstTrait;
+}
+```
+
+Chaque trait importé dans une classe DOIT être placé sur sa propre ligne, et chaque inclusion DOIT correspondre à sa propre instruction `use` :
+
+``` php
+<?php
+
+namespace Vendor\Package;
+
+use Vendor\Package\FirstTrait;
+use Vendor\Package\SecondTrait;
+use Vendor\Package\ThirdTrait;
+
+class ClassName
+{
+    use FirstTrait;
+    use SecondTrait;
+    use ThirdTrait;
+}
+```
+
+Quand une classe ne contient qu’une seule instruction et qu’il s’agit d’un import de trait avec `use`, alors l’accolade fermante de la classe DOIT être placée sur sa propre ligne, immédiatement après le `use` :
+
+``` php
+<?php
+
+namespace Vendor\Package;
+
+use Vendor\Package\FirstTrait;
+
+class ClassName
+{
+    use FirstTrait;
+}
+```
+
+Sinon, il DOIT y avoir une ligne vide après le dernier `use` :
+
+``` php
+<?php
+
+namespace Vendor\Package;
+
+use Vendor\Package\FirstTrait;
+
+class ClassName
+{
+    use FirstTrait;
+
+    private $property;
+}
+```
+
+Lorsque vous utilisez les opérateurs `insteadof` et `as`, ils DOIVENT être mis en œuvre de la manière suivante (y compris en ce qui concerne l’indentation, les espaces et les sauts de ligne) :
+
+``` php
+<?php
+
+class Talker
+{
+    use A;
+    use B {
+        A::smallTalk insteadof B;
+    }
+    use C {
+        B::bigTalk insteadof C;
+        C::mediumTalk as FooBar;
+    }
 }
 ```
