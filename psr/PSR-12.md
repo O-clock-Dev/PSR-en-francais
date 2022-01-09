@@ -197,3 +197,60 @@ declare(ticks=1) {
     // du code
 }
 ```
+
+## 4. Classes, propriétés et méthodes
+
+Le terme « classe » désigne toute classe, interface ou trait.
+
+Toute accolade fermante ne DOIT PAS être suivie d’un commentaire ou d’une instruction qui serait placée sur la même ligne.
+
+Lorsque vous instanciez une nouvelle classe, des parenthèses DOIVENT être présentes, même dans le cas où aucun argument n’est passé au constructeur :
+
+``` php
+new Foo();
+```
+
+### 4.1 `extends` et `implements`
+
+Les mots-clés `extends` et `implements` DOIVENT être déclarés sur la même ligne que la déclaration du nom de la classe.
+
+L’accolade ouvrante d’une classe DOIT être placée sur sa propre ligne ; l’accolade fermante DOIT être placée sur sa propre ligne après le corps de la classe.
+
+Toute accolade ouvrante doit être placée sur sa propre ligne et ne DOIT PAS être précédée ou suivie par une ligne vide.
+
+Toute accolade fermante doit être placée sur sa propre ligne et ne DOIT PAS être précédée par une ligne vide.
+
+``` php
+<?php
+
+namespace Vendor\Package;
+
+use FooClass;
+use BarClass as Bar;
+use OtherVendor\OtherPackage\BazClass;
+
+class ClassName extends ParentClass implements \ArrayAccess, \Countable
+{
+    // constantes, propriétés et méthodes
+}
+```
+
+Lorsqu’une classe mobilise une liste d’interfaces avec `extends` (ou lorsqu’une interface mobilise une liste d’autres interfaces avec `extends` [ndt: cf. [exemple #3](https://www.php.net/manual/fr/language.oop5.interfaces.php)]), ces listes PEUVENT être réparties sur plusieurs lignes, à raison d’une interface maximum par nouvelle ligne, y compris le premier item de la liste, chaque ligne étant indentée d’un seul niveau.
+
+``` php
+<?php
+
+namespace Vendor\Package;
+
+use FooClass;
+use BarClass as Bar;
+use OtherVendor\OtherPackage\BazClass;
+
+class ClassName extends ParentClass implements
+    \ArrayAccess,
+    \Countable,
+    \Serializable
+{
+    // constantes, propriétés et méthodes
+}
+```
