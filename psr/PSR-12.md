@@ -147,3 +147,53 @@ class FooBar
     // ... plus de code PHP ...
 }
 ```
+
+La composition d’espaces de nommage ne DOIT PAS dépasser deux niveaux de profondeur. Voici par conséquent le maximum autorisé :
+
+``` php
+<?php
+
+use Vendor\Package\SomeNamespace\{
+    SubnamespaceOne\ClassA,
+    SubnamespaceOne\ClassB,
+    SubnamespaceTwo\ClassY,
+    ClassZ,
+};
+```
+
+et un exemple de ce qui n’est pas autorisé :
+
+``` php
+<?php
+
+use Vendor\Package\SomeNamespace\{
+    SubnamespaceOne\AnotherNamespace\ClassA,
+    SubnamespaceOne\ClassB,
+    ClassZ,
+};
+```
+
+Lorsque vous souhaitez activer le typage strict dans un fichier contenant du balisage HTML placé en-dehors des balises ouvrantes et fermantes de PHP, cette déclaration de [directive d’exécution](https://www.php.net/manual/fr/control-structures.declare.php) DOIT être placée sur la première ligne du fichier et contenir une balise ouvrante, la déclaration elle-même, et une balise fermante.
+
+Par exemple :
+
+``` php
+<?php declare(strict_types=1) ?>
+<html>
+<body>
+    <?php
+        // ... code PHP supplémentaire ...
+    ?>
+</body>
+</html>
+```
+
+L’instruction de déclaration ne DOIT PAS contenir d’espace et DOIT être exactement `declare(strict_types=1)` (avec éventuellement le terminateur `;`).
+
+Les déclarations de directive d’exécution de type bloc sont autorisées et DOIVENT dans ce cas être formattées comme suit (notez la position des accolades et la présence d’espaces) :
+
+``` php
+declare(ticks=1) {
+    // du code
+}
+```
