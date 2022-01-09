@@ -4,13 +4,13 @@ Source : https://www.php-fig.org/psr/
 
 ## Contenu
 
-- [PSR-1](./psr/PSR-1.md) _Standard minimal pour la programmation PHP_
+- :heavy_check_mark: [PSR-1](./psr/PSR-1.md) _Standard minimal pour la programmation PHP_
 - PSR-3
-- [PSR-4](./psr/PSR-4.md) _Chargement automatique_
+- :heavy_check_mark: [PSR-4](./psr/PSR-4.md) _Chargement automatique_
 - PSR-6
 - PSR-7
 - PSR-11
-- [PSR-12](./psr/PSR-12.md) _Guide de style_
+- :heavy_check_mark: [PSR-12](./psr/PSR-12.md) _Guide de style_
 - PSR-13
 - PSR-14
 - PSR-15
