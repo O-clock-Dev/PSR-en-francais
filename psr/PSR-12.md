@@ -73,21 +73,21 @@ La balise fermante `?>` DOIT être omise des fichiers ne contenant que du code P
 
 ### 2.3 Lignes
 
-Il ne DOIT PAS y avoir de limite de longueur de ligne imposée par l’éditeur de texte (_hard limite_).
+Il NE DOIT PAS y avoir de limite de longueur de ligne imposée par l’éditeur de texte (_hard limite_).
 
 La valeur de toute limite de longueur de ligne suggérée par l’éditeur de texte (_soft limit_) DOIT être de 120 caractères.
 
 Les lignes ne DEVRAIENT PAS dépasser 80 caractères ; les lignes plus longues que cela DEVRAIENT être découpées en plusieurs morceaux répartis sur les lignes suivantes, chacune de ces lignes ne dépassant pas 80 caractères.
 
-Il ne DOIT PAS y avoir d’espaces typographiques (_trailing whitespaces_) à l’extrémité finale des lignes.
+Il NE DOIT PAS y avoir d’espaces typographiques (_trailing whitespaces_) à l’extrémité finale des lignes.
 
 Des lignes vides internes PEUVENT être ajoutées dans le but d’améliorer la lisibilité et pour mettre en évidence des blocs thématiques de code, sauf si cette pratique est explicitement proscrite.
 
-Il ne DOIT pas y avoir plus d’une instruction par ligne.
+Il NE DOIT pas y avoir plus d’une instruction par ligne.
 
 ### 2.4 Indentation
 
-Le code DOIT être indenté en utilisant 4 espaces pour chaque niveau supplémentaire d’indentation, et les tabulations ne DOIVENT PAS être utilisées pour indenter.
+Le code DOIT être indenté en utilisant 4 espaces pour chaque niveau supplémentaire d’indentation, et les tabulations NE DOIVENT PAS être utilisées pour indenter.
 
 ### 2.5 Mots-clés et types
 
@@ -99,7 +99,7 @@ Seules les formes courtes des types DOIVENT être utilisées, par ex. `bool` et 
 
 ## 3. Déclarations, espaces de nommage et imports
 
-L’en-tête d’un fichier PHP peut contenir plusieurs blocs. Lorsque présents, chaque bloc DOIT être séparé par une ligne vide, en ne DOIT PAS contenir de ligne vide. Les blocs DOIVENT être ordonnés comme listé ci-dessous, étant entendu que les blocs inutiles dans un certain contexte peuvent simplement être omis :
+L’en-tête d’un fichier PHP peut contenir plusieurs blocs. Lorsque présents, chaque bloc DOIT être séparé par une ligne vide, en NE DOIT PAS contenir de ligne vide. Les blocs DOIVENT être ordonnés comme listé ci-dessous, étant entendu que les blocs inutiles dans un certain contexte peuvent simplement être omis :
 
 - Balise d’ouverture `<?php`
 - Docblock général du fichier
@@ -148,7 +148,7 @@ class FooBar
 }
 ```
 
-La composition d’espaces de nommage ne DOIT PAS dépasser deux niveaux de profondeur. Voici par conséquent le maximum autorisé :
+La composition d’espaces de nommage NE DOIT PAS dépasser deux niveaux de profondeur. Voici par conséquent le maximum autorisé :
 
 ``` php
 <?php
@@ -188,7 +188,7 @@ Par exemple :
 </html>
 ```
 
-L’instruction de déclaration ne DOIT PAS contenir d’espace et DOIT être exactement `declare(strict_types=1)` (avec éventuellement le terminateur `;`).
+L’instruction de déclaration NE DOIT PAS contenir d’espace et DOIT être exactement `declare(strict_types=1)` (avec éventuellement le terminateur `;`).
 
 Les déclarations de directive d’exécution de type bloc sont autorisées et DOIVENT dans ce cas être formattées comme suit (notez la position des accolades et la présence d’espaces) :
 
@@ -202,7 +202,7 @@ declare(ticks=1) {
 
 Le terme « classe » désigne toute classe, interface ou trait.
 
-Toute accolade fermante ne DOIT PAS être suivie d’un commentaire ou d’une instruction qui serait placée sur la même ligne.
+Toute accolade fermante NE DOIT PAS être suivie d’un commentaire ou d’une instruction qui serait placée sur la même ligne.
 
 Lorsque vous instanciez une nouvelle classe, des parenthèses DOIVENT être présentes, même dans le cas où aucun argument n’est passé au constructeur :
 
@@ -216,9 +216,9 @@ Les mots-clés `extends` et `implements` DOIVENT être déclarés sur la même l
 
 L’accolade ouvrante d’une classe DOIT être placée sur sa propre ligne ; l’accolade fermante DOIT être placée sur sa propre ligne après le corps de la classe.
 
-Toute accolade ouvrante doit être placée sur sa propre ligne et ne DOIT PAS être précédée ou suivie par une ligne vide.
+Toute accolade ouvrante doit être placée sur sa propre ligne et NE DOIT PAS être précédée ou suivie par une ligne vide.
 
-Toute accolade fermante doit être placée sur sa propre ligne et ne DOIT PAS être précédée par une ligne vide.
+Toute accolade fermante doit être placée sur sa propre ligne et NE DOIT PAS être précédée par une ligne vide.
 
 ``` php
 <?php
@@ -347,11 +347,11 @@ Toute propriété DOIT être associée à une visibilité.
 
 Pour tout projet codé avec une version de PHP supportant la visibilité des constantes (version 7.1 et plus récente), toute constante DOIT être associée à une visibilité.
 
-Le mot-clé `var` ne DOIT PAS être utilisé pour déclarer une propriété.
+Le mot-clé `var` NE DOIT PAS être utilisé pour déclarer une propriété.
 
-Il ne DOIT PAS y avoir plus d’une déclaration de propriété par instruction.
+Il NE DOIT PAS y avoir plus d’une déclaration de propriété par instruction.
 
-Les nommage des propriétés ne DOIT PAS donner de sens particulier au caractère underscore (`_`) concernant la visibilité protégée ou privée. Autrement dit, un préfixe `_` n’a aucun sens particulier.
+Les nommage des propriétés NE DOIT PAS donner de sens particulier au caractère underscore (`_`) concernant la visibilité protégée ou privée. Autrement dit, un préfixe `_` n’a aucun sens particulier.
 
 Il DOIT y avoir un espace entre la déclaration de type et le nom de la propriété.
 
@@ -373,9 +373,9 @@ class ClassName
 
 Toute méthode DOIT être associée à une visibilité.
 
-Les nommage des méthodes ne DOIT PAS donner de sens particulier au caractère underscore (`_`) concernant la visibilité protégée ou privée. Autrement dit, un préfixe `_` n’a aucun sens particulier.
+Les nommage des méthodes NE DOIT PAS donner de sens particulier au caractère underscore (`_`) concernant la visibilité protégée ou privée. Autrement dit, un préfixe `_` n’a aucun sens particulier.
 
-Les noms de méthodes et de fonctions ne DOIVENT PAS être suivis d’un espace. L’accolade ouvrante DOIT être placée sur sa propre ligne, et l’accolade fermante DOIT être placée sur la ligne suivant immédiatement la fin du corps de la méthode ou fonction. Il ne DOIT PAS y avoir d’espace après la parenthèse ouvrante et avant la parenthèse fermante.
+Les noms de méthodes et de fonctions ne DOIVENT PAS être suivis d’un espace. L’accolade ouvrante DOIT être placée sur sa propre ligne, et l’accolade fermante DOIT être placée sur la ligne suivant immédiatement la fin du corps de la méthode ou fonction. Il NE DOIT PAS y avoir d’espace après la parenthèse ouvrante et avant la parenthèse fermante.
 
 Une déclaration de méthode ressemble au code suivant (notez en particulier la position des parenthèses, virgules, espaces et accolades) :
 
@@ -406,7 +406,7 @@ function fooBarBaz($arg1, &$arg2, $arg3 = [])
 
 ### 4.5 Paramètres des méthodes et fonctions
 
-La liste des paramètres ne DOIT PAS contenir d’espace _avant_ les virgules séparatrices, mais DOIT contenir un unique espace _après_ chacune des ces virgules.
+La liste des paramètres NE DOIT PAS contenir d’espace _avant_ les virgules séparatrices, mais DOIT contenir un unique espace _après_ chacune des ces virgules.
 
 Les paramètres de méthodes et de fonctions recevant une valeur par défaut DOIVENT être positionnés en fin de liste :
 
@@ -489,9 +489,9 @@ class ReturnTypeVariations
 }
 ```
 
-Lorsque l’opérateur de référence `&` est utilisé avant un paramètre, il ne DOIT PAS y avoir d’espace après l’opérateur (ce qui est illustré par l’exemple ci-dessus).
+Lorsque l’opérateur de référence `&` est utilisé avant un paramètre, il NE DOIT PAS y avoir d’espace après l’opérateur (ce qui est illustré par l’exemple ci-dessus).
 
-Il ne DOIT PAS y avoir d’espace entre les trois petits points signalant un comportement variadique, et le nom du paramètre-collecteur :
+Il NE DOIT PAS y avoir d’espace entre les trois petits points signalant un comportement variadique, et le nom du paramètre-collecteur :
 
 ``` php
 public function process(string $algorithm, ...$parts)
@@ -500,7 +500,7 @@ public function process(string $algorithm, ...$parts)
 }
 ```
 
-Lorsque l’opérateur de référence est combiné avec le token variadique, il ne DOIT PAS y avoir d’espace entre les deux :
+Lorsque l’opérateur de référence est combiné avec le token variadique, il NE DOIT PAS y avoir d’espace entre les deux :
 
 ``` php
 public function process(string $algorithm, &...$parts)
@@ -535,7 +535,7 @@ abstract class ClassName
 
 ### 4.7 Appels de méthodes et fonctions
 
-Lors d’un appel à une méthode ou à une fonction, il ne DOIT PAS y avoir d’espace entre le nom de la méthode ou fonction, et la parenthèse ouvrante ; il ne DOIT PAS y avoir d’espace après la parenthèse ouvrante ; il ne DOIT PAS y avoir d’espace avant la parenthèse fermante. Au niveau de la liste des arguments, il ne DOIT PAS y avoir d’espace avant les virgules séparatrices, et il DOIT y avoir un unique espace après chacune de ces virgules :
+Lors d’un appel à une méthode ou à une fonction, il NE DOIT PAS y avoir d’espace entre le nom de la méthode ou fonction, et la parenthèse ouvrante ; il NE DOIT PAS y avoir d’espace après la parenthèse ouvrante ; il NE DOIT PAS y avoir d’espace avant la parenthèse fermante. Au niveau de la liste des arguments, il NE DOIT PAS y avoir d’espace avant les virgules séparatrices, et il DOIT y avoir un unique espace après chacune de ces virgules :
 
 ``` php
 <?php
@@ -573,8 +573,8 @@ $app->get('/hello/{name}', function ($name) use ($app) {
 Les règles stylistiques générales concernant les structures de contrôles sont les suivantes :
 
 - il DOIT y avoir un unique espace après le mot-clé de la structure de contrôle
-- il ne DOIT PAS y avoir d’espace après la parenthèse ouvrante
-- il ne DOIT PAS y avoir d’espace avant la parenthèse fermante
+- il NE DOIT PAS y avoir d’espace après la parenthèse ouvrante
+- il NE DOIT PAS y avoir d’espace avant la parenthèse fermante
 - il DOIT y avoir un unique espace entre la parenthèse fermante et l’accolade ouvrante
 - le code de la structure de contrôle DOIT être indenté, d’un seul niveau
 - le code de la structure de contrôle DOIT débuter sur la nouvelle ligne immédiatement en-dessous de l’accolade ouvrante
@@ -815,9 +815,9 @@ Les fermetures DOIVENT être déclarées avec un espace après le mot-clé `func
 
 L’accolade ouvrante DOIT être placée sur la même ligne que la déclaration, et l’accolade fermante DOIT être placée sur une ligne dédiée, juste après la fin du corps de la fermeture.
 
-Il ne DOIT PAS y avoir d’espace après la parenthèse ouvrante ou avant la parenthèse fermante des listes de paramètres et de variables associées à la fermeture.
+Il NE DOIT PAS y avoir d’espace après la parenthèse ouvrante ou avant la parenthèse fermante des listes de paramètres et de variables associées à la fermeture.
 
-Dans ces listes de paramètres et de variables associée à la fermeture, il ne DOIT PAS y avoir d’espace avant les virgules séparatrices, mais il DOIT y avoir un unique espace après chacune de ces virgules.
+Dans ces listes de paramètres et de variables associée à la fermeture, il NE DOIT PAS y avoir d’espace avant les virgules séparatrices, mais il DOIT y avoir un unique espace après chacune de ces virgules.
 
 Les paramètres d’une fermeture recevant des valeurs par défaut doivent être positionnés en fin de liste.
 
