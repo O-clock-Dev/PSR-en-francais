@@ -403,3 +403,108 @@ function fooBarBaz($arg1, &$arg2, $arg3 = [])
     // corps de la fonction
 }
 ```
+
+### 4.5 Arguments des méthodes et fonctions
+
+La liste des arguments ne DOIT PAS contenir d’espace _avant_ les virgules séparatrices, mais DOIT contenir un espace _après_ chacune des ces virgules.
+
+Les arguments de méthodes et de fonctions recevant une valeur par défaut DOIVENT être positionnés en fin de liste :
+
+``` php
+<?php
+
+namespace Vendor\Package;
+
+class ClassName
+{
+    public function foo(int $arg1, &$arg2, $arg3 = [])
+    {
+        // corps de la méthode
+    }
+}
+```
+
+Une liste d’arguments PEUT être répartie sur plusieurs lignes, chacune étant indentée d’un seul niveau. Dans ce cas, le premier item de la liste doit lui aussi être positionné sur sa propre ligne, et la liste décomposée à raison d’un argument par ligne.
+
+Lorsqu’une liste d’arguments est ainsi réparties sur plusieurs lignes, la parenthèse fermante et l’accolade ouvrante DOIVENT être positionnées ensemble sur leur propre ligne, avec un espace entre les deux caractères :
+
+``` php
+<?php
+
+namespace Vendor\Package;
+
+class ClassName
+{
+    public function aVeryLongMethodName(
+        ClassTypeHint $arg1,
+        &$arg2,
+        array $arg3 = []
+    ) {
+        // corps de la méthode
+    }
+}
+```
+
+Si le type de la valeur de retour est déclaré, il DOIT y avoir un espace après le caractère deux-point (`:`) et avant la déclaration du type. Le caractère `:` et la déclaration de type DOIVENT être positionnés sur la même ligne que la parenthèse fermante de la liste des arguments, et ceci toujours sans mettre d’espace entre la parenthèse et `:` :
+
+``` php
+<?php
+
+declare(strict_types=1);
+
+namespace Vendor\Package;
+
+class ReturnTypeVariations
+{
+    public function functionName(int $arg1, $arg2): string
+    {
+        return 'foo';
+    }
+
+    public function anotherFunction(
+        string $foo,
+        string $bar,
+        int $baz
+    ): string {
+        return 'foo';
+    }
+}
+```
+
+Les déclarations de types _nullable_ ne DOIVENT PAS contenir d’espace entre le point d’interrogation (`?`) et le type :
+
+``` php
+<?php
+
+declare(strict_types=1);
+
+namespace Vendor\Package;
+
+class ReturnTypeVariations
+{
+    public function functionName(?string $arg1, ?int &$arg2): ?string
+    {
+        return 'foo';
+    }
+}
+```
+
+Lorsque l’opérateur de référence `&` est utilisé avant un argument, il ne DOIT PAS y avoir d’espace après l’opérateur (ce qui est illustré par l’exemple ci-dessus).
+
+Il ne DOIT PAS y avoir d’espace entre les trois petits points signalant un comportement variadique, et le nom de l’argument-collecteur :
+
+``` php
+public function process(string $algorithm, ...$parts)
+{
+    // processing
+}
+```
+
+Lorsque l’opérateur de référence est combiné avec le token variadique, il ne DOIT PAS y avoir d’espace entre les deux :
+
+``` php
+public function process(string $algorithm, &...$parts)
+{
+    // processing
+}
+```
