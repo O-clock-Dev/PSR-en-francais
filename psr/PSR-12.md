@@ -617,3 +617,41 @@ if (
     // bloc du elseif
 }
 ```
+
+### 5.2 `switch`, `case`
+
+Une structure `switch` ressemble à l’exemple ci-dessous (notez en particulier la position des parenthèse, espaces et accolades ; les déclarations `case` DOIVENT être indentées d’un niveau relativement au mot-clé `switch`, et le mot-clé `break` [ou tout autre mot-clé de terminaison] DOIT être indenté de la même quantité que les blocs `case` ; tout `case` non-vide résultant une cascade volontaire vers le prochain cas non-vide doit l’indiquer explicitement avec un commentaire du type `// no break`) :
+
+``` php
+<?php
+
+switch ($expr) {
+    case 0:
+        echo 'First case, with a break';
+        break;
+    case 1:
+        echo 'Second case, which falls through';
+        // no break
+    case 2:
+    case 3:
+    case 4:
+        echo 'Third case, return instead of break';
+        return;
+    default:
+        echo 'Default case';
+        break;
+}
+```
+
+Les expressions placées entre les parenthèses PEUVENT être réparties sur plusieurs lignes, à raison d’une expression par nouvelle ligne. Dans ce cas, chaque condition y compris la première DOIVENT être placées sur une ligne dédiée. La parenthèse fermante et l’accolade ouvrante DOIVENT être positionnées ensemble sur une ligne dédiée, avec un unique espace entre ces deux caractères. Les opérateurs booléens placés entre des conditions réparties sur plusieurs lignes DOIVENT toujours être positionnés, _soit_ au début des lignes, _soit_ à la fin des lignes, mais pas un mélange des deux :
+
+``` php
+<?php
+
+switch (
+    $expr1
+    && $expr2
+) {
+    // corps de la structure de contrôle
+}
+```
